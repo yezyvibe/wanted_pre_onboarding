@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+}
+
+.window {
+  overflow: hidden;
+  position: relative;
+  top: 20%;
+  left: 20%;
+  height: 300px;
+  width: 1060px;
+}
+
+.btnBox {
+  margin-top: 200px;
+}
+
+.btn {
+  width: 100px;
+  height: 100px;
+}
