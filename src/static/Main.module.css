@@ -17,6 +17,7 @@
 .cell img {
   border-radius: 5px;
   filter: brightness(50%);
+  cursor: pointer;
 }
 
 .window {
@@ -98,6 +99,7 @@
     margin-top: 40px;
     position: relative;
     align-items: center;
+    display: flex !important;
   }
   .title {
     margin-left: 0;

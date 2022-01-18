@@ -1,38 +1,31 @@
-import styled from "styled-components";
 import React, { useRef } from "react";
 import styles from "../static/Main.module.css";
 
-// const Slide = styled.div`
-//   height: 300px;
-//   width: 1060px;
-//   position: relative;
-// `;
-
-// const Box = styled.div`
-//   height: 146px;
-//   width: 330px;
-//   background-color: white;
-//   position: absolute;
-//   bottom: 40px;
-//   left: 30px;
-//   border-radius: 6px;
-//   display: flex;
-//   flex-direction: column;
-// `;
 export default function Main() {
   const container = useRef();
+  const firstSlide = useRef();
   let isCheck = false;
   const onClickPrev = () => {
-    container.current.children[1].firstElementChild.style.filter =
-      "brightness(50%)";
+    if (!container.current) {
+      return;
+    }
     container.current.style.transitionDuration = "500ms";
-    container.current.style.transform = `translateX(64%)`;
+    container.current.style.transform = `translateX(${
+      firstSlide.current.clientWidth + 28
+    }px)`;
+    controlBrightness("prev");
     container.current.ontransitionend = () => rearrange("prev");
     isCheck = true;
   };
   const onClickNext = () => {
+    if (!container.current) {
+      return;
+    }
     container.current.style.transitionDuration = "500ms";
-    container.current.style.transform = `translateX(-63%)`;
+    container.current.style.transform = `translateX(-${
+      firstSlide.current.clientWidth + 28
+    }px)`;
+    controlBrightness("next");
     container.current.ontransitionend = () => rearrange("next");
     isCheck = true;
   };
@@ -61,7 +54,6 @@ export default function Main() {
 
   const rearrange = (btn) => {
     container.current.removeAttribute("style");
-    controlBrightness(btn);
     if (!isCheck) {
       return;
     }
@@ -77,11 +69,34 @@ export default function Main() {
   // setTimeout(onClickNext, 0);
   // setInterval(onClickNext, 5000);
 
+  let startPosition = 0;
+  let endPosition = 0;
+
+  const dragStart = (e) => {
+    startPosition = e.screenX;
+  };
+
+  const dragEnd = (e) => {
+    endPosition = e.screenX;
+    if (startPosition - endPosition > 100) {
+      onClickNext();
+      return;
+    }
+    if (endPosition - startPosition > 100) {
+      onClickPrev();
+    }
+  };
+
   return (
     <div>
       <div className={styles.window}>
-        <div className={styles.container} ref={container}>
-          <div className={styles.cell}>
+        <div
+          className={styles.container}
+          ref={container}
+          onDragStart={dragStart}
+          onDragEnd={dragEnd}
+        >
+          <div className={styles.cell} ref={firstSlide}>
             <img src="img/slide1.jpg" alt="slide1"></img>
             <div className={styles.box}>
               <h2 className={styles.title}>메타버스 플랫폼 레드브릭</h2>
