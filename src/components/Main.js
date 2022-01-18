@@ -39,16 +39,16 @@ export default function Main() {
 
   const controlBrightness = (btn) => {
     if (btn === "prev") {
-      container.current.children[0].firstElementChild.style.filter =
+      container.current.children[1].firstElementChild.style.filter =
         "brightness(50%)";
-      container.current.children[1].firstElementChild.style.filter = "none";
-      container.current.children[2].firstElementChild.style.filter =
+      container.current.children[2].firstElementChild.style.filter = "none";
+      container.current.children[3].firstElementChild.style.filter =
         "brightness(50%)";
     } else {
-      container.current.children[2].firstElementChild.style.filter =
+      container.current.children[3].firstElementChild.style.filter =
         "brightness(50%)";
-      container.current.children[3].firstElementChild.style.filter = "none";
-      container.current.children[4].firstElementChild.style.filter =
+      container.current.children[4].firstElementChild.style.filter = "none";
+      container.current.children[5].firstElementChild.style.filter =
         "brightness(50%)";
     }
   };
@@ -115,6 +115,26 @@ export default function Main() {
           </Slide>
           <Slide className={styles.cell}>
             <img src="img/slide5.jpg" alt="slide5"></img>
+            <Box>
+              <h2 className={styles.title}>프롭테크 기업 1위</h2>
+              <p className={styles.subtitle}>전 직군 채용 중!</p>
+              <a className={styles.link} href="/">
+                바로가기 <i class="fas fa-chevron-right"></i>
+              </a>
+            </Box>
+          </Slide>
+          <Slide className={styles.cell}>
+            <img src="img/slide6.jpg" alt="slide6"></img>
+            <Box>
+              <h2 className={styles.title}>프롭테크 기업 1위</h2>
+              <p className={styles.subtitle}>전 직군 채용 중!</p>
+              <a className={styles.link} href="/">
+                바로가기 <i class="fas fa-chevron-right"></i>
+              </a>
+            </Box>
+          </Slide>
+          <Slide className={styles.cell}>
+            <img src="img/slide7.jpg" alt="slide7"></img>
             <Box>
               <h2 className={styles.title}>프롭테크 기업 1위</h2>
               <p className={styles.subtitle}>전 직군 채용 중!</p>
