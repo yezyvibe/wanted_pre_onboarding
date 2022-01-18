@@ -2,10 +2,14 @@ import React from "react";
 import styles from "../static/Nav.module.css";
 export default function Nav() {
   return (
-    <div className={styles.nav_bar}>
-      <div className={styles.main_logo}>
-        <h2 className={styles.company_logo}>📑</h2>
-        <h2 className={styles.company_name}>wanted</h2>
+    <div className={styles.navbar}>
+      <div className={styles.main__logo}>
+        <h2 className={styles.company_logo}>
+          <i class="fas fa-bars"></i>
+        </h2>
+        <a href="" className={styles.company_name}>
+          wanted
+        </a>
       </div>
       <div>
         <ul className={styles.menu_list}>
@@ -34,9 +38,10 @@ export default function Nav() {
       </div>
       <div className={styles.my_page}>
         <div className={styles.icons}>
-          <h3 className={styles.icon}>🔍</h3>
-          <h3 className={styles.icon}>💡</h3>
-          <h3 className={styles.icon}>😊</h3>
+          <p className={styles.icon_search}>
+            <i class="fas fa-search"></i>
+          </p>
+          <bu className={styles.icon}>회원가입/로그인</bu>
         </div>
         <div className={styles.btn}>
           <button>기업 서비스</button>

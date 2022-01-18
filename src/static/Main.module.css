@@ -40,3 +40,10 @@
   bottom: 100px;
   right: 200px;
 }
+
+@media (max-width: 800px) {
+  .cell img {
+    width: 630px;
+    height: 180px;
+  }
+}
