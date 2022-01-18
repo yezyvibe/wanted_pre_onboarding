@@ -12,6 +12,7 @@
 
 .cell img {
   border-radius: 5px;
+  filter: brightness(50%);
 }
 
 .window {
@@ -21,10 +22,6 @@
   height: 300px;
   width: 100%;
 }
-
-/* .btnBox {
-  margin-top: 200px;
-} */
 
 .btn_left {
   width: 40px;

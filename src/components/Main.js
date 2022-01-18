@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, { useRef } from "react";
 import styles from "../static/Main.module.css";
+import { Children } from "react/cjs/react.production.min";
 
 const Box = styled.div`
   height: 300px;
@@ -10,6 +11,8 @@ export default function Main() {
   const container = useRef();
   let isCheck = false;
   const onClickPrev = () => {
+    container.current.children[1].firstElementChild.style.filter =
+      "brightness(50%)";
     container.current.style.transitionDuration = "900ms";
     container.current.style.transform = `translateX(64%)`;
     container.current.ontransitionend = () => rearrange("prev");
@@ -22,8 +25,25 @@ export default function Main() {
     isCheck = true;
   };
 
+  const controlBrightness = (btn) => {
+    if (btn === "prev") {
+      container.current.children[0].firstElementChild.style.filter =
+        "brightness(50%)";
+      container.current.children[1].firstElementChild.style.filter = "none";
+      container.current.children[2].firstElementChild.style.filter =
+        "brightness(50%)";
+    } else {
+      container.current.children[2].firstElementChild.style.filter =
+        "brightness(50%)";
+      container.current.children[3].firstElementChild.style.filter = "none";
+      container.current.children[4].firstElementChild.style.filter =
+        "brightness(50%)";
+    }
+  };
+
   const rearrange = (btn) => {
     container.current.removeAttribute("style");
+    controlBrightness(btn);
     if (!isCheck) {
       return;
     }
@@ -33,7 +53,7 @@ export default function Main() {
           container.current.firstElementChild
         )
       : container.current.appendChild(container.current.firstElementChild);
-    console.log(container.current);
+
     isCheck = false;
   };
 

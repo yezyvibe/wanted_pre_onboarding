@@ -5,9 +5,9 @@ export default function Nav() {
     <div className={styles.navbar}>
       <div className={styles.main__logo}>
         <h2 className={styles.company_logo}>
-          <i class="fas fa-bars"></i>
+          <i className="fas fa-bars"></i>
         </h2>
-        <a href="" className={styles.company_name}>
+        <a href="/" className={styles.company_name}>
           wanted
         </a>
       </div>
@@ -39,9 +39,9 @@ export default function Nav() {
       <div className={styles.my_page}>
         <div className={styles.icons}>
           <p className={styles.icon_search}>
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
           </p>
-          <bu className={styles.icon}>회원가입/로그인</bu>
+          <p className={styles.icon}>회원가입/로그인</p>
         </div>
         <div className={styles.btn}>
           <button>기업 서비스</button>
