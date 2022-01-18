@@ -24,20 +24,44 @@
 }
 
 .btn_left {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 60px;
   position: absolute;
   bottom: 100px;
   left: 200px;
+  filter: opacity(0.4);
+  border-radius: 15px;
 }
 .btn_right {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 60px;
   position: absolute;
   bottom: 100px;
   right: 200px;
+  filter: opacity(0.4);
+  border-radius: 15px;
 }
 
+.title {
+  font-weight: 500;
+  font-family: sans-serif;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+.subtitle {
+  margin-top: 0;
+  margin-left: 22px;
+}
+
+.link {
+  margin-left: 22px;
+  text-decoration: none;
+  color: #36f;
+  margin-top: 15px;
+}
+
+/* 반응형 */
 @media (max-width: 800px) {
   .cell img {
     width: 630px;
