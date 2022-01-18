@@ -5,6 +5,10 @@
 }
 
 .cell {
+  height: 300px;
+  width: 1060px;
+  position: relative;
+
   display: flex;
   justify-content: center;
   margin: 14px;
@@ -43,26 +47,39 @@
 }
 
 .title {
-  font-weight: 500;
+  font-weight: 600;
   font-family: sans-serif;
   margin-bottom: 0;
-  margin-left: 20px;
+  margin-left: 18px;
+  font-size: 22px;
 }
 
 .subtitle {
   margin-top: 0;
-  margin-left: 22px;
+  margin-left: 20px;
 }
 
 .link {
-  margin-left: 22px;
+  margin-left: 20px;
   text-decoration: none;
   color: #36f;
   margin-top: 15px;
 }
 
+.box {
+  height: 146px;
+  width: 330px;
+  background-color: white;
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
 /* 반응형 */
-@media (max-width: 1000px) {
+@media (min-width: 500px) and (max-width: 1000px) {
   .cell img {
     width: 630px;
     height: 180px;
@@ -72,6 +89,26 @@
   }
   .btn_right {
     display: none;
+  }
+  .cell {
+    flex-direction: column;
+    align-items: center;
+  }
+  .box {
+    margin-top: 40px;
+    position: relative;
+    align-items: center;
+  }
+  .title {
+    margin-left: 0;
+  }
+
+  .subtitle {
+    margin-left: 0;
+  }
+
+  .link {
+    margin: 0;
   }
 }
 
@@ -97,13 +134,13 @@
   .btn_left {
     position: absolute;
     bottom: 110px;
-    left: 200px;
+    left: 300px;
   }
 
   .btn_right {
     position: absolute;
     bottom: 110px;
-    right: 200px;
+    right: 300px;
   }
 }
 

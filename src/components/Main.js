@@ -2,23 +2,23 @@ import styled from "styled-components";
 import React, { useRef } from "react";
 import styles from "../static/Main.module.css";
 
-const Slide = styled.div`
-  height: 300px;
-  width: 1060px;
-  position: relative;
-`;
+// const Slide = styled.div`
+//   height: 300px;
+//   width: 1060px;
+//   position: relative;
+// `;
 
-const Box = styled.div`
-  height: 146px;
-  width: 330px;
-  background-color: white;
-  position: absolute;
-  bottom: 40px;
-  left: 30px;
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-`;
+// const Box = styled.div`
+//   height: 146px;
+//   width: 330px;
+//   background-color: white;
+//   position: absolute;
+//   bottom: 40px;
+//   left: 30px;
+//   border-radius: 6px;
+//   display: flex;
+//   flex-direction: column;
+// `;
 export default function Main() {
   const container = useRef();
   let isCheck = false;
@@ -44,12 +44,18 @@ export default function Main() {
       container.current.children[2].firstElementChild.style.filter = "none";
       container.current.children[3].firstElementChild.style.filter =
         "brightness(50%)";
+      container.current.children[1].lastElementChild.style.display = "none";
+      container.current.children[2].lastElementChild.style.display = "";
+      container.current.children[3].lastElementChild.style.display = "none";
     } else {
       container.current.children[3].firstElementChild.style.filter =
         "brightness(50%)";
       container.current.children[4].firstElementChild.style.filter = "none";
       container.current.children[5].firstElementChild.style.filter =
         "brightness(50%)";
+      container.current.children[3].lastElementChild.style.display = "none";
+      container.current.children[4].lastElementChild.style.display = "";
+      container.current.children[5].lastElementChild.style.display = "none";
     }
   };
 
@@ -68,87 +74,93 @@ export default function Main() {
 
     isCheck = false;
   };
+  // setTimeout(onClickNext, 0);
+  // setInterval(onClickNext, 5000);
 
   return (
     <div>
       <div className={styles.window}>
         <div className={styles.container} ref={container}>
-          <Slide className={styles.cell}>
+          <div className={styles.cell}>
             <img src="img/slide1.jpg" alt="slide1"></img>
-            <Box>
-              <h2 className={styles.title}>프롭테크 기업 1위</h2>
-              <p className={styles.subtitle}>전 직군 채용 중!</p>
+            <div className={styles.box}>
+              <h2 className={styles.title}>메타버스 플랫폼 레드브릭</h2>
+              <p className={styles.subtitle}>전 직군 적극 채용 중!</p>
               <a className={styles.link} href="/">
-                바로가기 <i class="fas fa-chevron-right"></i>
+                바로가기 <i className="fas fa-chevron-right"></i>
               </a>
-            </Box>
-          </Slide>
-          <Slide className={styles.cell}>
+            </div>
+          </div>
+          <div className={styles.cell}>
             <img src="img/slide2.jpg" alt="slide2"></img>
-            <Box>
-              <h2 className={styles.title}>프롭테크 기업 1위</h2>
-              <p className={styles.subtitle}>전 직군 채용 중!</p>
+            <div className={styles.box}>
+              <h2 className={styles.title}>NO1 고기/식자재 플랫폼</h2>
+              <p className={styles.subtitle}>개발자 및 전직군 채용중!</p>
               <a className={styles.link} href="/">
-                바로가기 <i class="fas fa-chevron-right"></i>
+                바로가기 <i className="fas fa-chevron-right"></i>
               </a>
-            </Box>
-          </Slide>
-          <Slide className={styles.cell}>
+            </div>
+          </div>
+          <div className={styles.cell}>
             <img src="img/slide3.jpg" alt="slide3"></img>
-            <Box>
+            <div className={styles.box}>
               <h2 className={styles.title}>프롭테크 기업 1위</h2>
               <p className={styles.subtitle}>전 직군 채용 중!</p>
               <a className={styles.link} href="/">
-                바로가기 <i class="fas fa-chevron-right"></i>
+                바로가기 <i className="fas fa-chevron-right"></i>
               </a>
-            </Box>
-          </Slide>
-          <Slide className={styles.cell}>
+            </div>
+          </div>
+          <div className={styles.cell}>
             <img src="img/slide4.jpg" alt="slide4"></img>
-            <Box>
-              <h2 className={styles.title}>프롭테크 기업 1위</h2>
+            <div className={styles.box}>
+              <h2 className={styles.title}>럭셔리 쇼핑을 발란</h2>
               <p className={styles.subtitle}>전 직군 채용 중!</p>
               <a className={styles.link} href="/">
-                바로가기 <i class="fas fa-chevron-right"></i>
+                바로가기 <i className="fas fa-chevron-right"></i>
               </a>
-            </Box>
-          </Slide>
-          <Slide className={styles.cell}>
+            </div>
+          </div>
+          <div className={styles.cell}>
             <img src="img/slide5.jpg" alt="slide5"></img>
-            <Box>
-              <h2 className={styles.title}>프롭테크 기업 1위</h2>
-              <p className={styles.subtitle}>전 직군 채용 중!</p>
+            <div className={styles.box}>
+              <h2 className={styles.title}>2천만의 라이프스타일 플랫폼</h2>
+              <p className={styles.subtitle}>
+                우리의 일은 업계의 표준이 됩니다
+              </p>
               <a className={styles.link} href="/">
-                바로가기 <i class="fas fa-chevron-right"></i>
+                바로가기 <i className="fas fa-chevron-right"></i>
               </a>
-            </Box>
-          </Slide>
-          <Slide className={styles.cell}>
+            </div>
+          </div>
+          <div className={styles.cell}>
             <img src="img/slide6.jpg" alt="slide6"></img>
-            <Box>
-              <h2 className={styles.title}>프롭테크 기업 1위</h2>
-              <p className={styles.subtitle}>전 직군 채용 중!</p>
+            <div className={styles.box}>
+              <h2 className={styles.title}>우리가 바라던 내차팔기</h2>
+              <p className={styles.subtitle}>헤이딜러 전 직군 적극 채용!</p>
               <a className={styles.link} href="/">
-                바로가기 <i class="fas fa-chevron-right"></i>
+                바로가기 <i className="fas fa-chevron-right"></i>
               </a>
-            </Box>
-          </Slide>
-          <Slide className={styles.cell}>
+            </div>
+          </div>
+          <div className={styles.cell}>
             <img src="img/slide7.jpg" alt="slide7"></img>
-            <Box>
-              <h2 className={styles.title}>프롭테크 기업 1위</h2>
-              <p className={styles.subtitle}>전 직군 채용 중!</p>
+            <div className={styles.box}>
+              <h2 className={styles.title}>인턴을 Wanted</h2>
+              <p className={styles.subtitle}>
+                최고의 IT 기업에서 인턴 적극 모집 중!
+              </p>
               <a className={styles.link} href="/">
-                바로가기 <i class="fas fa-chevron-right"></i>
+                바로가기 <i className="fas fa-chevron-right"></i>
               </a>
-            </Box>
-          </Slide>
+            </div>
+          </div>
         </div>
         <button className={styles.btn_left} onClick={onClickPrev}>
-          <i class="fas fa-chevron-left"></i>
+          <i className="fas fa-chevron-left"></i>
         </button>
         <button className={styles.btn_right} onClick={onClickNext}>
-          <i class="fas fa-chevron-right"></i>
+          <i className="fas fa-chevron-right"></i>
         </button>
       </div>
     </div>
