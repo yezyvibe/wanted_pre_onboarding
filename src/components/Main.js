@@ -66,8 +66,8 @@ export default function Main() {
 
     isCheck = false;
   };
-  // setTimeout(onClickNext, 0);
-  // setInterval(onClickNext, 5000);
+  setTimeout(onClickNext, 0);
+  setInterval(onClickNext, 5000);
 
   let startPosition = 0;
   let endPosition = 0;
