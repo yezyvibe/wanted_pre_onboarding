@@ -14,6 +14,9 @@ export default function Nav() {
       <div>
         <ul className={styles.menu_list}>
           <li className={styles.menu}>
+            <button>홈</button>
+          </li>
+          <li className={styles.menu}>
             <button>채용</button>
           </li>
           <li className={styles.menu}>
@@ -26,13 +29,17 @@ export default function Nav() {
             <button>이력서</button>
           </li>
           <li className={styles.menu}>
-            <button>커뮤니티</button>
+            <button>
+              커뮤니티<em>New</em>
+            </button>
           </li>
           <li className={styles.menu}>
             <button>프리랜서</button>
           </li>
           <li className={styles.menu}>
-            <button>AI 합격예측</button>
+            <button>
+              AI 합격예측<em>Beta</em>
+            </button>
           </li>
         </ul>
       </div>

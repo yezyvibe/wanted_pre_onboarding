@@ -36,8 +36,9 @@
   position: absolute;
   bottom: 100px;
   left: 200px;
-  filter: opacity(0.4);
+  filter: opacity(0.6);
   border-radius: 15px;
+  border: 0;
 }
 .btn_right {
   width: 30px;
@@ -45,8 +46,9 @@
   position: absolute;
   bottom: 100px;
   right: 200px;
-  filter: opacity(0.4);
+  filter: opacity(0.6);
   border-radius: 15px;
+  border: 0;
 }
 
 .title {
@@ -81,8 +83,15 @@
   flex-direction: column;
 }
 
+.bar {
+  margin: 0;
+  border: 0;
+  height: 1px;
+  background: rgb(224, 222, 222);
+}
+
 /* 반응형 */
-@media (min-width: 500px) and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .cell img {
     width: 630px;
     height: 180px;
